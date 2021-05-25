@@ -19,14 +19,15 @@
             for(var i = 0;i<20;i++){
                 numbers.push(i+1);
             }
-            for(var i=0;i<20;i++){
-                n = Math.floor(Math.random()*19+1);
-                m = Math.floor(Math.random()*19+1);
-                tem = numbers[n-1];
-                numbers[n-1] = numbers[m-1];
-                numbers[m-1] = tem;   
+            for(var i=0;i<100;i++){
+                n = Math.floor(Math.random()*20);
+                m = Math.floor(Math.random()*20);
+                tem = numbers[n];
+                numbers[n] = numbers[m];
+                numbers[m] = tem; 
+                show(numbers);  
             }
-            show(numbers);
+            //show(numbers);
 
 
             //prac2-4 10個の乱数を生成し，もう一つの配列を作成し，コピーするプログラム．
