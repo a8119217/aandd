@@ -15,39 +15,30 @@
             for(var i = 0;i<10;i++){
                 numbers.push(i+1);
             }
-            //show(numbers);
-            a = numbers[1];
-            b = numbers[3];
-            numbers[1] = b;
-            numbers[3] = a;
-            //show(numbers);
+            show(numbers);
+            tem = numbers[1];
+            numbers[1] = numbers[3];
+            numbers[3] = tem;
+            
+            show(numbers);
 
-            //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
-            var numbers2 = [];
-            for(var i = 0;i<10;i++){
-                numbers2.push(i+1);
-            }
-            //show(numbers2);
-            n = Math.floor(Math.random()*9+1);
-            m = Math.floor(Math.random()*9+1);
-            c = numbers2[n];
-            d = numbers2[m];
-            numbers2[n] = d;
-            numbers2[m] = c;
-            show(numbers2);
+
 
             //(nとmは乱数にて決定する)
             //prac2-3 prac2-2を20回繰り返す（シャッフルプログラムの完成）
-            
+            var numbers2 = [];
+            for(var i = 0;i<20;i++){
+                numbers2.push(i+1);
+            }
             for(var i=0;i<20;i++){
                 n = Math.floor(Math.random()*9+1);
                 m = Math.floor(Math.random()*9+1);
                 c = numbers2[n];
                 d = numbers2[m];
                 numbers2[n] = d;
-                numbers2[m] = c;
-                
+                numbers2[m] = c;   
             }
+
 
             //prac2-4 10個の乱数を生成し，もう一つの配列を作成し，コピーするプログラム．
         }
