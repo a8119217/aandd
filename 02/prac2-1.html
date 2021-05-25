@@ -10,8 +10,20 @@
 
     <script>
         function runButtonPressed() {
+            var numbers = [];
             //prac2-1 10個の順数（１，２，３．．．の数列）を生成し，２番目と４番目を入れ替える
+            for(var i = 0;i<10;i++){
+                numbers.push(i+1);
+            }
+            show(numbers);
+            a = numbers[1];
+            b = numbers[3];
+            numbers[1] = b;
+            numbers[3] = a;
+            show(numbers);
+
             //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
+            
             //(nとmは乱数にて決定する)
             //prac2-3 prac2-2を20回繰り返す（シャッフルプログラムの完成）
 
