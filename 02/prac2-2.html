@@ -18,9 +18,9 @@
            //show(numbers);
             n = Math.floor(Math.random()*9+1);
             m = Math.floor(Math.random()*9+1);
-            tem = numbers[n];
-            numbers[n] = numbers[m];
-            numbers[m] = tem;
+            tem = numbers[n-1];
+            numbers[n-1] = numbers[m-1];
+            numbers[m-1] = tem;
             
             show(numbers);
         }
