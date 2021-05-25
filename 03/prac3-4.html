@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+           
+            
+            //prac3-4 10個の乱数の最小値を求める
+            numbers = [];
+            var min = 100000;
+            ran = Math.floor(Math.random()*40+1);
+            for(var i = 0;i<10;i++){
+                ran = Math.floor(Math.random()*40+1);
+                numbers.push(ran);
+                if(ran<min){
+                    min = ran;
+                }
+            }
+            show(numbers);
+            
+            document.getElementById('min').innerHTML = min;
+        }
+            
+    </script>
+
+</head>
+
+<body>
+    <h1>prac3</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+    <p id="min"></p>
+</body>
+
+</html>
