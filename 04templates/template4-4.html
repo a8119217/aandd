@@ -13,28 +13,32 @@
             var numbers = [];
             createOrderedRandomNumbers(numbers, 20);
             //show(numbers);
-            for(var i=0;i<50;i++){
-                n = Math.floor(Math.random()*20);
-                m = Math.floor(Math.random()*20);
-                tem = numbers[n];
-                numbers[n] = numbers[m];
-                numbers[m] = tem;  
-                
-            }
+           
             show(numbers); 
             
-            
-            for(var i = 0;i<20;i++){
-                if(numbers[i]==1){
-                    console.log(i);
-                    
-                    document.getElementById("res2").innerHTML = i;
+            x = 25;
+            lower = 0;
+            upper = 19
+            for(var i=0;i<20;i++){
+                var mid = Math.floor((lower + upper)/2);
+                if(numbers[mid]==25){
+                    document.getElementById("res2").innerHTML = mid;
                     break;
                 }
-                else if(numbers[i]==19){
-                     
-                    document.getElementById("res2").innerHTML = "1はありません";
+                else if(numbers[mid]>25){
+                    upper = mid;
+
                 }
+                else if(numbers[mid]<25){
+                    lower = mid;
+
+                }
+                if(upper<=lower+1){
+                    document.getElementById("res2").innerHTML = "見つかりませんでした";
+                    break;
+
+                }
+
             }
         }
 
@@ -44,7 +48,7 @@
 </head>
 
 <body>
-    <h1>pra4-3</pra4-3></h1>
+    <h1>pra4-4</pra4-3></h1>
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
     <p id="res2"></p>
