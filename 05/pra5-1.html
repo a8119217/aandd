@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function ButtonPressed(){
+            numbers = [];
+                for(var i = 0;i<10;i++){
+                ran = Math.floor(Math.random()*10);
+                numbers.push(ran)
+                }
+                show(numbers);
+                var tem = 0;
+                var n = 0;
+                var m = 0;
+                for(var j = 0; j<10;j++){
+                for(var i = 0;i<10;i++){
+                    if(numbers[i]>numbers[i+1]){
+                        tem = numbers[i];
+                        numbers[i] = numbers[i+1];
+                        numbers[i+1] = tem;
+                    }
+                }
+
+                }
+                show(numbers);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>5-1
+
+    </h1>
+    <button onclick="ButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
