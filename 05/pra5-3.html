@@ -4,17 +4,48 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <script type="text/javascript" src="../aandd.js"></script>
     <script type="text/javascript" src="../jquery.min.js"></script>
 
     <script>
+        function ButtonPressed(){
+            numbers = [];
+                for(var i = 0;i<10;i++){
+                ran = Math.floor(Math.random()*10);
+                numbers.push(ran)
+                }
+
+                numbers = [9];
+                numbers2 = [5,8,13,34,56];
+
+                var x = numbers[0];
+               /* for(var i = 0;i<10;i++){
+                    if(){
+                        for
+                    }
+                }*/
+
+                for(var i = 0;i<10;i++){
+                    var min = 1000;
+                    var min_index = i;
+                    for(var j = i;j<10;j++){
+                        if(number[j]<min){
+                            min = number[j];
+
+                        }
+
+                    }
+                }
+                show(numbers);
+                
+            }
     </script>
 
 </head>
 
 <body>
-    <h1>ex0-4</h1>
-    <button onclick="runButtonPressed()">run!</button>
+    <h1>5-3</h1>
+    <button onclick="ButtonPressed()">run!</button>
     <p id="res"></p>
 </body>
 
