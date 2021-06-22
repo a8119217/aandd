@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var birthday = {};
+
+        function registerButtonPressed() {
+            var name = document.getElementById('tf1').value;
+            var date = document.getElementById('tf2').value;
+            birthday[name] = date;
+            birthday[date] = name;
+        }
+
+        function nameButtonPressed() {
+            var name = document.getElementById('tf3').value;
+            var date = birthday[name];
+            document.getElementById('tf4').value = date;
+        }
+        function dateButtonPressed() {
+            var name = document.getElementById('tf5').value;
+            var date = birthday[name];
+            document.getElementById('tf6').value = date;
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>誕生日</h1>
+    <h2>登録</h2>
+    名前：<input id="tf1" type="text" value="">
+    <br>
+    誕生日：<input id="tf2" type="text" value="">
+    <button onclick="registerButtonPressed()">登録!</button>
+    <h2>検索（名前から）</h2>
+    名前：<input id="tf3" type="text" value="">
+    <br>
+    誕生日：<input id="tf4" type="text" value="">
+    <button onclick="nameButtonPressed()">検索!</button>
+    <h2>検索（日付から）</h2>
+    誕生日：<input id="tf5" type="text" value="">
+    <br>
+    名前：<input id="tf6" type="text" value="">
+    <button onclick="dateButtonPressed()">検索!</button>
+    <p id="res"></p>
+</body>
+
+</html>
