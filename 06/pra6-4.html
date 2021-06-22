@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script type="text/javascript" src="nouns.js"></script>
+    <script type="text/javascript" src="verbs.js"></script>
+
+    <script>
+
+        var nouns;
+        var verbs;
+
+        $(document).ready(function () {
+            nouns = nounstext.split('\n');
+            verbs = verbstext.split('\n');
+        });
+
+        function runButtonPressed() {
+            for(var j = 0; j<1000000; j++){
+                var noun = selectone(nouns);
+                var verb = selectone(verbs);
+                var text = noun + verb;
+                //show(text);
+
+                var chars = text.split('');
+                //show(chars);
+                var length = chars.length
+                
+                var stack = [];
+                for(var i = 0; i<length; i++){
+                    stack.push(chars.pop());   
+                }
+                //show(stack);
+
+                var text2 = stack.join('');
+                //show(text2);
+
+                if(text == text2){
+                    console.log("ok")
+                    show(text2);
+                    show('回文です')
+                
+                }
+            }
+        }
+
+        function selectone(array) {
+            var size = array.length;
+            var index = Math.floor(Math.random() * size);
+            return array[index];
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>回文さん</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+
+</body>
+
+</html>

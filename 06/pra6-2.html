@@ -14,11 +14,25 @@
             show(text);
             var chars = text.split('');
             show(chars);
-            var text2 = chars.join('');
+            length = chars.length
+            
+            var stack = [];
+            for(var i = 0; i<length; i++){
+                stack.push(chars.pop());   
+            }
+            show(stack);
+
+            var text2 = stack.join('');
             show(text2);
 
-            
+            if(text == text2){
+                console.log("ok")
+                show('回文です')
+              
+            }
         }
+            
+        
 
     </script>
 
@@ -29,6 +43,7 @@
     <input id="tf1" type="text" value="こんにちは">
     <button onclick="ButtonPressed()">run!</button>
     <p id="res"></p>
+   
 </body>
 
 </html>

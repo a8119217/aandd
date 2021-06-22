@@ -14,10 +14,13 @@
             show(text);
             var chars = text.split('');
             show(chars);
-            var text2 = chars.join('');
-            show(text2);
-
+            length = chars.length
             
+            var text2 = [];
+            for(var i = 0; i<length; i++){
+                text2.push(chars.pop());   
+            }
+            show(text2);
         }
 
     </script>
