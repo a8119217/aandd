@@ -21,12 +21,28 @@
         function nameButtonPressed() {
             var name = document.getElementById('tf3').value;
             var date = birthday[name];
-            document.getElementById('tf4').value = date;
+            
+            if(date == null){
+                var undefined = "見つかりません"
+                document.getElementById('tf4').value = undefined;
+            }
+           else{
+           　 document.getElementById('tf4').value = date   
+            }
         }
+        
         function dateButtonPressed() {
             var name = document.getElementById('tf5').value;
             var date = birthday[name];
-            document.getElementById('tf6').value = date;
+            
+            if(date == null){
+                var undefined = "見つかりません"
+                document.getElementById('tf6').value = undefined;
+            }
+           else{
+           　 document.getElementById('tf6').value = date   
+            }
+            
         }
 
 

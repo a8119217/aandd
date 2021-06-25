@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var bot = {};
+
+  
+
+        function speakButtonPressed() {
+            var remark = document.getElementById('tf1').value;
+            
+            var x = localStorage.getItem('発言');
+            bot = JSON.parse(x);
+            console.log(x);
+            console.log(bot);
+            var reply = bot[remark];
+            if(reply == null){
+                var undefined = remark +"の答え方教えて！"
+                document.getElementById('tf2').value = undefined;
+            }
+           else{
+            document.getElementById('tf2').value = reply;   
+            }
+        }
+
+        function ButtonPressed() {
+            var remark = document.getElementById('tf3').value;
+            var reply = document.getElementById('tf4').value;
+            bot[remark] = reply;
+            localStorage.setItem('発言',JSON.stringify(bot));
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>botシステム</h1>
+    <h2>話す</h2>
+    あなた:<input id="tf1" type="text" value="">
+    <button onclick="speakButtonPressed()">発言！</button>
+    <br>
+    コンピュータ：<input id="tf2" type="text" value="">
+    <h2>教えてあげる</h2>
+    発言<input id="tf3" type="text" value=""><br>
+    返答<input id="tf4" type="text" value="">
+    <br>
+    <button onclick="ButtonPressed()">教える!</button>
+    <p id="res"></p>
+</body>
+
+</html>
