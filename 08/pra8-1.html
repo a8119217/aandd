@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../osql.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var students = {'黒木':'6月24日','粕川':'5月12日','西村':'6月24','上島':'6月5日'};
+            var studentsC = [];
+            var keys = Object.keys(students);
+            for(var i =0;i<4;i++){
+            var key = keys[i];
+            var student = {};
+            student.name = key;
+            student.birthday = students[key];
+            studentsC.push(student);
+
+            document.getElementById('res').innerHTML = JSON.stringify(studentsC, null, '\t');
+            }
+
+           /* var Students = [{'name':}]*/
+
+            
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>#8-1</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <pre id="res"></pre>
+</body>
+
+</html>
